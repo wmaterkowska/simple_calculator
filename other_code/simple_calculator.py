@@ -5,40 +5,44 @@
 """
 
 
-def addition(s_input):
+class simple_calculator:
 
-    if len(s_input) >= 1:
-        arr_add = list(s_input.rstrip().split('+'))
-        # print(arr_add)
-        result_add = 0
-        for i in range(len(arr_add)):
-            result_add += int(arr_add[i])
+    def __init__(self, s_input):
+        self.s_input = s_input
 
-        return result_add
+    def addition(s_input):
 
-    return 0
+        if len(s_input) >= 1:
+            arr_add = list(s_input.rstrip().split('+'))
+            # print(arr_add)
+            result_add = 0
+            for i in range(len(arr_add)):
+                result_add += int(arr_add[i])
 
+            return result_add
 
-def subtraction(s_input):
+        return 0
 
-    if len(s_input) >= 1:
-        arr_sub = list(s_input.rstrip().split('-'))
-        # print(arr_sub)
-        result_sub = int(arr_sub[0])
-        for i in range(1, len(arr_sub)):
-            result_sub -= int(arr_sub[i])
+    def subtraction(s_input):
 
-        return result_sub
+        if len(s_input) >= 1:
+            arr_sub = list(s_input.rstrip().split('-'))
+            # print(arr_sub)
+            result_sub = int(arr_sub[0])
+            for i in range(1, len(arr_sub)):
+                result_sub -= int(arr_sub[i])
 
-    return 0
+            return result_sub
+
+        return 0
 
 
 if __name__ == "__main__":
 
     s_input = input()
 
-    add_result = addition(s_input)
+    add_result = simple_calculator.addition(s_input)
     print(add_result)
 
-    sub_result = subtraction(s_input)
+    sub_result = simple_calculator.subtraction(s_input)
     print(sub_result)
