@@ -6,19 +6,25 @@ import sys
 sys.path.append('../')
 
 
-def test_add_unknown():
+def test_addition_4numbers():
 
     s_input = '1+2+3+4'
     assert simple_calculator.addition(s_input) == 10
 
 
-def test_add_unknown2():
+def test_addition_multiple():
 
     s_input = '1+2+3+4+5+6+7+8+9'
     assert simple_calculator.addition(s_input) == 45
 
 
-def test_subtract_unknown():
+def test_subtraction_simple():
 
     s_input = '2-1'
     assert simple_calculator.subtraction(s_input) == 1
+
+
+def test_subtraction_4numbers():
+
+    s_input = '5-4-3-2'
+    assert simple_calculator.subtraction(s_input) == -4

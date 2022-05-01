@@ -1,4 +1,7 @@
 #!/bin/python3
+
+import re
+
 """
     Simple calculator which adds integers separated by '+'
 
@@ -9,6 +12,40 @@ class simple_calculator:
 
     def __init__(self, s_input):
         self.s_input = s_input
+
+    def __extract_numbers__(s_input):
+        if s_input == '':
+            return []
+        else:
+            temp_string = s_input.replace('-', '+')
+            numbers = list(map(int, temp_string.rstrip().split('+')))
+            return numbers
+
+    def __extract_operators__(s_input):
+        operators = []
+        for sign in s_input:
+            if sign == '-' or sign == '+':
+                operators.append(sign)
+        return operators
+
+    def calculate(s_input):
+        """
+        main calculator method for subtraction and addition
+        """
+        numbers = simple_calculator.__extract_numbers__(s_input)
+        operators = simple_calculator.__extract_operators__(s_input)
+
+        if numbers == []:
+            return 0
+
+        result = numbers[0]
+        for number, operator in zip(numbers[1:], operators):
+            if operator == '+':
+                result += number
+            else:
+                result -= number
+
+        return result
 
     def addition(s_input):
 
@@ -41,8 +78,10 @@ if __name__ == "__main__":
 
     s_input = input()
 
-    add_result = simple_calculator.addition(s_input)
-    print(add_result)
+    #add_result = simple_calculator.addition(s_input)
+    # print(add_result)
 
-    sub_result = simple_calculator.subtraction(s_input)
-    print(sub_result)
+    #sub_result = simple_calculator.subtraction(s_input)
+    # print(sub_result)
+
+    print(simple_calculator.calculate(s_input))
