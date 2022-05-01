@@ -3,7 +3,8 @@
 import re
 
 """
-    Simple calculator which adds integers separated by '+'
+    Simple calculator with addition and subtraction. 
+    It can calculate expresions such as: 1+2+3-4-1 (input)
 
 """
 
@@ -14,6 +15,10 @@ class simple_calculator:
         self.s_input = s_input
 
     def __extract_numbers__(s_input):
+        """
+        extracts numbers, into an array, from input string
+        eg. 1+2+3-4 -> [1,2,3,4]
+        """
         if s_input == '':
             return []
         else:
@@ -22,6 +27,10 @@ class simple_calculator:
             return numbers
 
     def __extract_operators__(s_input):
+        """
+        extracts operators, into an array, from input string
+        eg. 1+2+3-4 -> [+,+,-]
+        """
         operators = []
         for sign in s_input:
             if sign == '-' or sign == '+':

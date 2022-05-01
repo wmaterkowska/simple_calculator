@@ -5,6 +5,10 @@ import os
 import sys
 sys.path.append('../')
 
+"""
+simple tests for different input for calculate function from simple_calculator class
+"""
+
 
 def test_calculate_simple_addition():
     s_input = '2+3'

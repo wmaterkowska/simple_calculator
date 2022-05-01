@@ -5,6 +5,10 @@ from other_code.simple_calculator import simple_calculator
 
 sys.path.append('.')
 
+"""
+simple tests for different input for addition and subtraction functions from simple_calculator class
+"""
+
 
 def test__add_input_empty():
 

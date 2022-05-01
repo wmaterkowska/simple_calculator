@@ -5,6 +5,10 @@ from other_code.simple_calculator import simple_calculator
 
 sys.path.append('.')
 
+"""
+simple tests for different input for __extract_numbers__ and __extract_operators__ functions from simple_calculator class
+"""
+
 
 def test_extract_numbers_input_empty():
 

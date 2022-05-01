@@ -6,6 +6,11 @@ import sys
 sys.path.append('../')
 
 
+"""
+simple tests for addition and subtraction functions from simple_calculator class
+"""
+
+
 def test_addition_4numbers():
 
     s_input = '1+2+3+4'
